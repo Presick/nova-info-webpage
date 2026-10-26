@@ -1,0 +1,55 @@
+---
+import { countiesFor, tradeNaics } from '../lib/cbp';
+
+interface Props {
+  trade: string;
+  limit?: number;
+}
+
+const { trade, limit = 10 } = Astro.props;
+const rows = countiesFor(trade).slice(0, limit);
+const max = Math.max(...rows.map((r) => r.establishments), 1);
+const info = tradeNaics[trade];
+
+const rowH = 34;
+const labelW = 112;
+const valueW = 48;
+const width = 640;
+const barMax = width - labelW - valueW - 8;
+const height = rows.length * rowH + 8;
+---
+
+<figure class="chart">
+  <figcaption>
+    <strong>Top {rows.length} Kentucky counties</strong>
+    <span>{info?.short} establishments with paid employees, Census County Business Patterns 2023</span>
+  </figcaption>
+  <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-labelledby="chart-title chart-desc">
+    <title id="chart-title">{info?.short}: establishments by Kentucky county</title>
+    <desc id="chart-desc">
+      {rows.map((r) => `${r.county} ${r.establishments}`).join(', ')}.
+    </desc>
+    {rows.map((r, i) => {
+      const w = Math.max(2, (r.establishments / max) * barMax);
+      const y = i * rowH + 4;
+      return (
+        <g>
+          <text x={labelW - 8} y={y + 20} text-anchor="end" class="lbl">{r.county}</text>
+          <rect x={labelW} y={y + 4} width={w} height={rowH - 12} rx="4" class="bar" />
+          <text x={labelW + w + 8} y={y + 20} class="val">{r.establishments}</text>
+        </g>
+      );
+    })}
+  </svg>
+</figure>
+
+<style>
+  .chart { margin: 0; }
+  figcaption { display: grid; gap: 0.15rem; margin-bottom: 0.75rem; }
+  figcaption strong { font-size: 1rem; }
+  figcaption span { color: var(--muted); font-size: 0.875rem; }
+  svg { width: 100%; height: auto; display: block; }
+  .lbl { font-size: 14px; fill: var(--text); }
+  .val { font-size: 14px; font-weight: 600; fill: var(--text); }
+  .bar { fill: var(--accent); }
+</style>

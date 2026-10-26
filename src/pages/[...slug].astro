@@ -1,0 +1,25 @@
+---
+import { getCollection, render } from 'astro:content';
+import Guide from '../layouts/Guide.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('guides');
+  return entries.map((entry) => {
+    const related = entries
+      .filter((e) => e.id !== entry.id)
+      .filter((e) => (entry.data.trade ? e.data.trade || e.data.type : e.data.trade))
+      .slice(0, 4);
+    return {
+      params: { slug: entry.data.slug.replace(/^\//, '') },
+      props: { entry, related },
+    };
+  });
+}
+
+const { entry, related } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Guide entry={entry} related={related}>
+  <Content />
+</Guide>
