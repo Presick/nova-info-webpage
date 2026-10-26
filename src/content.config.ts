@@ -18,6 +18,8 @@ const guides = defineCollection({
     data_pulled: z.coerce.date().optional(),
     owner_disclosure: z.string(),
     reviewer: z.string().optional(),
+    chart: z.boolean().optional(),
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
     authorities: z.array(z.object({ name: z.string(), url: z.string() })).optional(),
   }),
 });

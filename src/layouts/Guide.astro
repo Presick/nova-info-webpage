@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import CountyChart from '../components/CountyChart.astro';
+import CtaBand from '../components/CtaBand.astro';
 import { summary, tradeNaics } from '../lib/cbp';
 import type { CollectionEntry } from 'astro:content';
 
@@ -15,7 +16,9 @@ const path = d.slug.startsWith('/') ? d.slug : `/${d.slug}`;
 const fmt = (date: Date) =>
   date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 
-const trade = d.trade && tradeNaics[d.trade] ? d.trade : undefined;
+const trade = d.chart && d.trade && tradeNaics[d.trade] ? d.trade : undefined;
+const slugKey = path.replace(/^\//, '').split('/').pop() ?? 'guide';
+const trialUrl = `https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=article&utm_content=${slugKey}-top`;
 const s = trade ? summary(trade) : undefined;
 const base = Astro.site ?? new URL('https://example.com');
 const org = {
@@ -42,12 +45,23 @@ const jsonLd = [
       { '@type': 'ListItem', position: 2, name: d.title, item: new URL(path, base).toString() },
     ],
   },
+  ...(d.faq && d.faq.length > 0
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: d.faq.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      }]
+    : []),
 ];
 ---
 
 <Base title={d.title} description={d.description} path={path} jsonLd={jsonLd}>
   <div class="container article-wrap">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>{trade ? tradeNaics[trade].short : d.type === 'state' ? 'Kentucky' : 'Research'}</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span>{d.trade && tradeNaics[d.trade] ? tradeNaics[d.trade].short : d.trade ? d.trade.charAt(0).toUpperCase() + d.trade.slice(1) : d.type === 'state' ? 'Kentucky' : d.type === 'hub' ? 'Research' : 'Guides'}</span></nav>
 
     <header class="article-head">
       <p class="byline">{d.owner_disclosure} <a href="/about">How we handle numbers</a></p>
@@ -60,6 +74,7 @@ const jsonLd = [
         <span>Updated {fmt(d.last_updated)}</span>
         {d.data_pulled && <span>Census data pulled {fmt(d.data_pulled)}</span>}
       </p>
+      <p class="head-cta"><span>Free 30-day NOVA trial. No credit card. Keep your number.</span> <a class="btn small" href={trialUrl} rel="noopener">Start free trial</a></p>
     </header>
 
     {s && trade && (
@@ -76,6 +91,20 @@ const jsonLd = [
     <article class="prose">
       <slot />
     </article>
+
+    {d.faq && d.faq.length > 0 && (
+      <section class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Common questions</h2>
+        {d.faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </section>
+    )}
+
+    <CtaBand where={slugKey} />
 
     {related.length > 0 && (
       <nav class="related" aria-label="Related guides">

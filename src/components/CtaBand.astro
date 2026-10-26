@@ -1,0 +1,23 @@
+---
+interface Props {
+  where: string;
+  heading?: string;
+  text?: string;
+  button?: string;
+}
+const {
+  where,
+  heading = 'Stop sending callers to voicemail',
+  text = 'NOVA answers every call 24/7, books the job, follows up on estimates and transfers urgent calls to a person you choose. 30-day free trial. No credit card. Keep your current number. Plans start at $297 a month after the trial.',
+  button = 'Start your free trial',
+} = Astro.props;
+const href = `https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=article&utm_content=${where}-band`;
+---
+
+<aside class="cta-band" aria-label="Try NOVA free">
+  <div>
+    <h2>{heading}</h2>
+    <p>{text}</p>
+  </div>
+  <a class="btn" href={href} rel="noopener">{button}</a>
+</aside>

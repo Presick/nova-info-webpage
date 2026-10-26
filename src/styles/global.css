@@ -156,6 +156,13 @@ a.card:hover { transform: translateY(-2px); border-color: var(--accent); }
 .cta-band p { margin: 0; color: var(--hero-muted); font-size: 0.95rem; max-width: 46ch; }
 .cta-band .btn { background: #fff; color: #0f2740; }
 
+.head-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin: 0 0 1.5rem; padding: 0.75rem 1rem; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 10px; max-width: var(--prose); font-size: 0.92rem; }
+.head-cta .btn { white-space: nowrap; }
+.faq { margin-top: 2.5rem; max-width: var(--prose); }
+.faq h2 { font-size: 1.45rem; margin: 0 0 0.75rem; }
+.faq details { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); padding: 0.75rem 1rem; margin: 0 0 0.5rem; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq details p { margin: 0.6rem 0 0; color: var(--muted); }
 .related { margin-top: 2.5rem; max-width: var(--prose); }
 .related h2 { font-size: 1.15rem; margin: 0 0 0.75rem; }
 .related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }

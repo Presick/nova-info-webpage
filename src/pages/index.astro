@@ -8,6 +8,15 @@ const order = ['plumbing-hvac', 'electrical', 'landscaping-tree', 'roofing'];
 const trades = order
   .map((t) => entries.find((e) => e.data.trade === t))
   .filter((e): e is NonNullable<typeof e> => Boolean(e));
+const featuredSlugs = [
+  '/plumbing/after-hours-emergency-calls',
+  '/hvac/peak-season-missed-calls',
+  '/guides/speed-to-lead-contractors',
+  '/guides/ai-receptionist-vs-answering-service',
+];
+const featured = featuredSlugs
+  .map((s) => entries.find((e) => e.data.slug === s))
+  .filter((e): e is NonNullable<typeof e> => Boolean(e));
 const hub = entries.find((e) => e.data.type === 'hub');
 const rules = entries.find((e) => e.data.type === 'state');
 
@@ -23,7 +32,7 @@ const jsonLd = [
 
 <Base
   title="Missed-Call Guides for Home Service Businesses"
-  description="Plain, sourced guides on missed calls for plumbers, electricians, landscapers, tree services and roofers, with Kentucky county data and the rules that apply."
+  description="Sourced guides on the missed calls that cost plumbers, HVAC companies, electricians, landscapers, tree services and roofers jobs, with Kentucky county data and a fix: a 24/7 AI receptionist."
   path="/"
   jsonLd={jsonLd}
 >
@@ -31,17 +40,33 @@ const jsonLd = [
     <div class="container">
       <p class="eyebrow">For Kentucky home service businesses</p>
       <h1>Missed calls cost jobs. Here is what the data actually shows.</h1>
-      <p class="lead">Short, sourced guides for plumbers, electricians, landscapers, tree services and roofers: what the studies say, what the Census says about your county, and what Kentucky rules apply when someone else answers your phone.</p>
+      <p class="lead">Sourced guides for plumbers, HVAC companies, electricians, landscapers, tree services and roofers: what a missed call costs, what the Census says about your county, and how a 24/7 AI receptionist books the job before the caller dials someone else.</p>
       <div class="actions">
         <a class="btn" href="/guides/missed-calls-research">Read the research</a>
-        <a class="btn ghost" href="https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=home" rel="noopener">See the NOVA trial</a>
+        <a class="btn ghost" href="https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=home" rel="noopener">Try NOVA free for 30 days</a>
       </div>
     </div>
   </section>
 
   <section class="block">
     <div class="container">
-      <h2>Guides by trade</h2>
+      <h2>Fix the call problem in your trade</h2>
+      <p class="sub">Each guide names a common problem, shows the sourced numbers and ends with the fix and a free 30-day NOVA trial.</p>
+      <div class="grid">
+        {featured.map((e) => (
+          <a class="card" href={e.data.slug}>
+            <span class="tag">{e.data.trade ? e.data.trade.toUpperCase() : 'Guide'}</span>
+            <h3>{e.data.title}</h3>
+            <p>{e.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="container">
+      <h2>Kentucky guides by trade</h2>
       <p class="sub">Each guide shows how many businesses of that trade operate in each Kentucky county, what an answered call has to do in that trade, and what to ask any answering service.</p>
       <div class="grid">
         {trades.map((e) => {
@@ -61,7 +86,7 @@ const jsonLd = [
 
   <section class="block" style="padding-top:0">
     <div class="container">
-      <h2>Start with the fundamentals</h2>
+      <h2>The research and the rules</h2>
       <div class="grid">
         {hub && (
           <a class="card" href={hub.data.slug}>
@@ -88,7 +113,7 @@ const jsonLd = [
         <div><strong>Every number has a source</strong><span>Each guide lists where its figures come from and when we pulled them.</span></div>
         <div><strong>Vendor studies are labeled</strong><span>Most missed-call research is published by companies that sell phone tools. We show it as a range and say so.</span></div>
         <div><strong>No invented customer stories</strong><span>We do not publish testimonials or revenue promises. If we cannot source it, we leave it out.</span></div>
-        <div><strong>We say who we are</strong><span>Nova Impact Solutions sells NOVA, an AI receptionist. Every guide opens with that disclosure.</span></div>
+        <div><strong>We say who we are</strong><span>Nova Impact Solutions sells NOVA, an AI receptionist, and each guide recommends it as the fix. Every guide opens with that disclosure.</span></div>
       </div>
     </div>
   </section>
