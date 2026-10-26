@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// The production domain is not decided yet. Set SITE_URL when building for deploy.
-const site = process.env.SITE_URL ?? 'https://example.com';
+// Production address. Override with SITE_URL if the domain changes.
+const site = process.env.SITE_URL ?? 'https://missedcalls.novaanswerfirst.com';
 
 // The page title comes from front matter, so drop the first H1 in the Markdown body.
 function removeFirstH1() {
