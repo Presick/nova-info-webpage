@@ -1,0 +1,24 @@
+---
+interface Props {
+  where: string;
+  heading?: string;
+  text?: string;
+  button?: string;
+}
+
+const {
+  where,
+  heading = 'Start your 30-day free trial of NOVA',
+  text = 'No credit card. Keep your current phone number. Then plans start at $297 a month, with no setup fee.',
+  button = 'Start free trial',
+} = Astro.props;
+const href = `https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=band&utm_content=${where}`;
+---
+
+<aside class="cta-band" aria-label="NOVA free trial">
+  <div>
+    <h2>{heading}</h2>
+    <p>{text}</p>
+  </div>
+  <a class="btn" href={href} rel="noopener">{button}</a>
+</aside>

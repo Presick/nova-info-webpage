@@ -5,7 +5,7 @@ slug: /kentucky/call-rules
 type: state
 state: KY
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-24
+last_updated: 2026-10-26
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 authorities: [{name: "Kentucky Revised Statutes 526.010", url: "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=19948"}, {name: "Kentucky Dept. of Housing, Buildings and Construction", url: "https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf"}, {name: "FCC ruling 24-17 on AI voices", url: "https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf"}]
 reviewer: none yet; lawyer review pending
@@ -53,6 +53,4 @@ If your phone is answered by someone else, they should not quote prices, diagnos
 
 ## About NOVA
 
-NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
-
-[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=call-rules)
+NOVA is a 24/7 AI receptionist that answers inbound calls before voicemail, books appointments and transfers urgent calls live to a number you choose. You write the rules it follows. [See how it works](/) or [start the 30-day free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=call-rules-mid) (no credit card, keep your current number).

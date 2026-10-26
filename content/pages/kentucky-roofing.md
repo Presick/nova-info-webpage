@@ -5,7 +5,7 @@ slug: /kentucky/roofing/missed-calls
 trade: roofing
 state: KY
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-24
+last_updated: 2026-10-26
 data_pulled: 2026-10-24
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 authorities: [{name: "US Census Bureau, County Business Patterns 2023", url: "https://www.census.gov/programs-surveys/cbp/data/api.html"}, {name: "Kentucky Dept. of Housing, Buildings and Construction", url: "https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf"}]
@@ -45,6 +45,19 @@ Only Jefferson and Fayette counties have 20 or more establishments, 14 counties 
 
 Kentucky's [state license table](https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf) lists general erection and construction as "no state license required" and does not list roofing; requirements can differ by city and county, so check yours. Recording and AI-voice rules are covered in [Kentucky rules for businesses that let someone else answer the phone](/kentucky/call-rules).
 
+## How NOVA handles roofing calls
+
+NOVA is a 24/7 AI receptionist built for home service businesses. For roofing:
+
+- **Answers 24/7, before voicemail**, so a leak call after a storm or an estimate request while you are on a roof is not lost.
+- **Connects with AccuLynx**, so new leads and bookings reach the system your team already uses.
+- **Separates leaks from estimates.** You write the rules: which calls transfer live to your number and which get an inspection time on your calendar.
+- **Captures what an estimator needs**, such as the address, the type of work and whether an insurance claim is involved.
+- **Follows up on estimates** that were not booked, so quotes do not go cold.
+- **Speaks multiple languages** for homeowners who prefer another language.
+
+**30-day free trial. No credit card. Keep your current number. Plans start at $297 a month after the trial, with no setup fee.** [Start your free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=roofing-mid)
+
 ## Sources
 
 - US Census Bureau, County Business Patterns 2023, NAICS 238160 (roofing contractors), Kentucky counties, pulled 2026-10-24: https://api.census.gov/data/2023/cbp
@@ -53,6 +66,4 @@ Kentucky's [state license table](https://dhbc.ky.gov/Documents/KHBC_Plan%20Submi
 
 ## About NOVA
 
-NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
-
-[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=roofing)
+NOVA is the 24/7 AI receptionist from Nova Impact Solutions, which publishes this site. Learn how it works and how it compares on the [home page](/) and the [comparison page](/compare).

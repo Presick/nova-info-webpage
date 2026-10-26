@@ -4,7 +4,7 @@ description: "A plain summary of the published missed-call studies for home serv
 slug: /guides/missed-calls-research
 type: hub
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-24
+last_updated: 2026-10-26
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 reviewer: none yet
 ---
@@ -59,15 +59,13 @@ Entry prices listed on vendor and comparison pages range widely, from about $18 
 | Phone system with built-in AI | A business phone line that includes AI answering | From about $18 per user per month, billed yearly (Allo) |
 | NOVA (our product) | AI receptionist for home service businesses | Plans start at $297 a month after a 30-day free trial; the trial covers inbound calls |
 
-Trade-offs: a live service puts a person on the line; AI services can answer many calls at once and are listed at lower monthly prices in the figures above; every option needs clear emergency rules from you. Prices come from vendor and comparison pages and change often. We did not check each vendor's current pricing page, so confirm before you decide.
+Trade-offs: a live service puts a person on the line; AI services can answer many calls at once and are listed at lower monthly prices in the figures above; every option needs clear emergency rules from you. Prices come from vendor and comparison pages and change often. We did not check each vendor's current pricing page, so confirm before you decide. For a feature-by-feature, dated comparison of NOVA, Rosie, Smith.ai and Goodcall, see the [full comparison](/compare).
 ## Sources
 
 - The CallRail, Invoca, Service Direct, 411 Locals and contractor call-analysis figures are as reported in these vendor and trade summaries; the original studies were not checked: https://stealthagents.com/research/home-services-missed-call-revenue-statistics-2026, https://www.mightycall.com/blog/research-businesses-arent-answering-the-phone-as-much-as-they-think/, https://www.zyratalk.com/blog/what-a-missed-call-actually-costs-a-home-service-business/
 - The 10 to 20 percent callback planning assumption is a vendor suggestion (zyratalk link above), not a measured rate.
 - AI answering tool entry prices: https://www.withallo.com/blog/best-ai-phone-answering-services-for-plumbers and https://fast.io/resources/smith-ai-review-2026
 
-## About NOVA
+## Stop sending callers to voicemail
 
-NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
-
-[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=missed-calls-research)
+NOVA is a 24/7 AI receptionist that answers inbound calls before voicemail, books appointments, follows up on estimates and transfers urgent calls live to a person you choose. It connects with tools like ServiceTitan and AccuLynx and speaks multiple languages. **Try it free for 30 days. No credit card. Keep your current number. Then plans start at $297 a month.** [Start your free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=research-mid)
