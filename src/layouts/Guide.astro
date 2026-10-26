@@ -1,6 +1,5 @@
 ---
 import Base from './Base.astro';
-import CtaBand from '../components/CtaBand.astro';
 import CountyChart from '../components/CountyChart.astro';
 import { summary, tradeNaics } from '../lib/cbp';
 import type { CollectionEntry } from 'astro:content';
@@ -57,7 +56,6 @@ const jsonLd = [
       {d.authorities && d.authorities.length > 0 && (
         <p class="authorities"><span>Built from</span>{d.authorities.map((a) => <a href={a.url} rel="noopener">{a.name}</a>)}</p>
       )}
-      <p class="head-cta"><a class="btn" href={`https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-top&utm_content=${d.slug.replace(/^\//, '').replace(/\//g, '-')}`} rel="noopener">Try NOVA free for 30 days</a><span>No credit card. Keep your number.</span></p>
       <p class="stamp">
         <span>Updated {fmt(d.last_updated)}</span>
         {d.data_pulled && <span>Census data pulled {fmt(d.data_pulled)}</span>}
@@ -78,8 +76,6 @@ const jsonLd = [
     <article class="prose">
       <slot />
     </article>
-
-    <CtaBand where={d.slug.replace(/^\//, '').replace(/\//g, '-')} />
 
     {related.length > 0 && (
       <nav class="related" aria-label="Related guides">

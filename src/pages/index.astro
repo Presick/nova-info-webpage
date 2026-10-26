@@ -1,143 +1,48 @@
 ---
 import Base from '../layouts/Base.astro';
-import CtaBand from '../components/CtaBand.astro';
 import { getCollection } from 'astro:content';
 import { summary, tradeNaics } from '../lib/cbp';
-
-const trial = (where: string) => `https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=home&utm_content=${where}`;
 
 const entries = await getCollection('guides');
 const order = ['plumbing-hvac', 'electrical', 'landscaping-tree', 'roofing'];
 const trades = order
   .map((t) => entries.find((e) => e.data.trade === t))
   .filter((e): e is NonNullable<typeof e> => Boolean(e));
-
-const features = [
-  { t: 'Answers inbound calls 24/7', d: 'NOVA picks up before the call reaches your voicemail box: nights, weekends, lunch breaks and while your crew is on a job.' },
-  { t: 'Books appointments', d: 'Callers get a time on your calendar while they are still on the line, with their address and the job details captured.' },
-  { t: 'Connects to the tools you use', d: 'Works with tools like ServiceTitan and AccuLynx, so bookings and lead details land where your team already works.' },
-  { t: 'Follows up on estimates and open leads', d: 'Reaches back to customers who asked for a quote but did not book. Follow-up goes only to people who agreed to be contacted.' },
-  { t: 'Hands live calls to a person you choose', d: 'You set the rules and a phone number. When a call needs a human, NOVA transfers it live.' },
-  { t: 'Speaks your customers’ language', d: 'Answers in multiple languages, so a Spanish-speaking homeowner with a burst pipe does not get an English voicemail greeting.' },
-  { t: 'Keep your current number', d: 'No new number to print on trucks and invoices. You forward calls to NOVA and keep what customers already know.' },
-  { t: 'Emergency rules written by you', d: 'You decide what counts as an emergency and what NOVA says and does. It follows your instructions for each trade.' },
-];
-
-const steps = [
-  { t: 'Start your free trial', d: 'Fill in a short form. No credit card.' },
-  { t: 'Quick onboarding call', d: 'A person from our team sets up NOVA with your hours, emergency rules, calendar and the number to transfer urgent calls to. About 10 minutes.' },
-  { t: 'Forward your calls', d: 'Keep your current number and forward calls to NOVA. Review every call in your transcripts.' },
-];
-
-const faqs = [
-  { q: 'Do I need a credit card to start?', a: 'No. The 30-day trial is free and needs no credit card.' },
-  { q: 'What does it cost after the trial?', a: 'Plans start at $297 a month. There is no setup fee. You can cancel anytime.' },
-  { q: 'Do I have to change my phone number?', a: 'No. You keep your current number and forward calls to NOVA.' },
-  { q: 'What happens on an emergency call?', a: 'You write the emergency rules during onboarding, including a phone number for live transfers. NOVA follows them for each call.' },
-  { q: 'Which tools does it connect to?', a: 'NOVA connects with tools like ServiceTitan and AccuLynx. If you use something else, ask us during signup and we will tell you what is possible.' },
-  { q: 'What does the free trial include?', a: 'Full access for 30 days. The trial focuses on answering your inbound calls, booking appointments and handing urgent calls to your team.' },
-  { q: 'Is it a real person or AI?', a: 'NOVA is an AI receptionist. A person on our team helps you set it up, and urgent calls can transfer to a person on your team.' },
-];
+const hub = entries.find((e) => e.data.type === 'hub');
+const rules = entries.find((e) => e.data.type === 'state');
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'NOVA AI Receptionist',
-    applicationCategory: 'BusinessApplication',
-    description: 'A 24/7 AI receptionist for home service businesses that answers inbound calls, books appointments, follows up on estimates and transfers urgent calls to a person you choose.',
-    offers: { '@type': 'Offer', price: '297', priceCurrency: 'USD', description: 'Plans start at $297 per month after a 30-day free trial. No credit card, no setup fee.' },
+    '@type': 'WebSite',
+    name: 'Missed-Call Guides',
     publisher: { '@type': 'Organization', name: 'Nova Impact Solutions', url: 'https://novaimpactsolutions.com' },
   },
 ];
 ---
 
 <Base
-  title="NOVA: 24/7 AI Receptionist for Home Service Businesses"
-  description="NOVA answers your inbound calls before voicemail, books appointments, follows up on estimates and transfers urgent calls to you. 30-day free trial, no credit card."
+  title="Missed-Call Guides for Home Service Businesses"
+  description="Plain, sourced guides on missed calls for plumbers, electricians, landscapers, tree services and roofers, with Kentucky county data and the rules that apply."
   path="/"
   jsonLd={jsonLd}
 >
   <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">24/7 AI receptionist for home service businesses</p>
-        <h1>Stop sending customers to voicemail.</h1>
-        <p class="lead">NOVA answers your inbound calls, books the appointment, follows up on estimates and passes urgent calls to the person you choose. Try it free for 30 days.</p>
-        <div class="actions">
-          <a class="btn lg" href={trial('hero')} rel="noopener">Start your 30-day free trial</a>
-          <a class="btn ghost lg" href="/compare">Compare AI receptionists</a>
-        </div>
-        <ul class="chips" aria-label="Trial terms">
-          <li>No credit card</li>
-          <li>Keep your current number</li>
-          <li>No setup fee</li>
-          <li>Then from $297/month</li>
-        </ul>
-      </div>
-      <div class="hero-card" aria-label="What NOVA does on a call">
-        <p class="hc-title">A call at 8:42 PM</p>
-        <ol>
-          <li><b>Picks up.</b> NOVA answers before the call reaches voicemail.</li>
-          <li><b>Understands the job.</b> Takes the address and what is wrong.</li>
-          <li><b>Applies your rules.</b> Urgent? It transfers live to your number.</li>
-          <li><b>Books it.</b> Otherwise the appointment goes on your calendar.</li>
-        </ol>
-        <p class="hc-note">Illustration of the call flow. Your rules decide each step.</p>
+    <div class="container">
+      <p class="eyebrow">For Kentucky home service businesses</p>
+      <h1>Missed calls cost jobs. Here is what the data actually shows.</h1>
+      <p class="lead">Short, sourced guides for plumbers, electricians, landscapers, tree services and roofers: what the studies say, what the Census says about your county, and what Kentucky rules apply when someone else answers your phone.</p>
+      <div class="actions">
+        <a class="btn" href="/guides/missed-calls-research">Read the research</a>
+        <a class="btn ghost" href="https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=home" rel="noopener">See the NOVA trial</a>
       </div>
     </div>
   </section>
 
-  <section class="block" id="problem">
+  <section class="block">
     <div class="container">
-      <h2>An unanswered call is a job your competitor can book.</h2>
-      <p class="sub">Published studies put the share of unanswered home-service calls anywhere from about 14 percent to about three in four, depending on who measured. Almost all come from companies that sell phone tools, so treat the range as a range. Your own number is the one that matters. <a href="/guides/missed-calls-research">See the studies and how to count yours.</a></p>
-
-      <form class="calc" id="calc" aria-labelledby="calc-title">
-        <h3 id="calc-title">What are unanswered calls costing you?</h3>
-        <p class="calc-note">Use your own numbers. Nothing is pre-filled and nothing is sent anywhere.</p>
-        <div class="calc-grid">
-          <label for="c-missed">Missed calls per month<input id="c-missed" inputmode="numeric" placeholder="e.g. 40" /></label>
-          <label for="c-new">Share that are new customers (%)<input id="c-new" inputmode="numeric" placeholder="e.g. 60" /></label>
-          <label for="c-book">Share you would normally book (%)<input id="c-book" inputmode="numeric" placeholder="e.g. 50" /></label>
-          <label for="c-job">Average job value ($)<input id="c-job" inputmode="numeric" placeholder="e.g. 450" /></label>
-        </div>
-        <p class="calc-out" id="calc-out" aria-live="polite">Enter your numbers to see the revenue at stake each month.</p>
-        <a class="btn" href={trial('calculator')} rel="noopener">Test NOVA free for 30 days</a>
-      </form>
-    </div>
-  </section>
-
-  <section class="block alt" id="how">
-    <div class="container">
-      <h2>Live in one short call</h2>
-      <p class="sub">Three steps. You keep your number and your tools.</p>
-      <ol class="steps">
-        {steps.map((s, i) => (
-          <li><span class="n">{i + 1}</span><div><h3>{s.t}</h3><p>{s.d}</p></div></li>
-        ))}
-      </ol>
-      <p><a class="btn" href={trial('how')} rel="noopener">Start free trial</a></p>
-    </div>
-  </section>
-
-  <section class="block" id="features">
-    <div class="container">
-      <h2>Everything a front desk does on the phone, around the clock</h2>
-      <p class="sub">NOVA is built for home service businesses: plumbing, HVAC, electrical, roofing, landscaping and tree service.</p>
-      <div class="grid feat">
-        {features.map((f) => (
-          <div class="card static"><h3>{f.t}</h3><p>{f.d}</p></div>
-        ))}
-      </div>
-      <p class="integ"><strong>Works with:</strong> ServiceTitan · AccuLynx · other tools on request. Product names belong to their owners.</p>
-    </div>
-  </section>
-
-  <section class="block alt" id="trades">
-    <div class="container">
-      <h2>Built for your trade</h2>
-      <p class="sub">What an answered call has to do in each trade, with Kentucky county data on how many businesses compete for the same callers.</p>
+      <h2>Guides by trade</h2>
+      <p class="sub">Each guide shows how many businesses of that trade operate in each Kentucky county, what an answered call has to do in that trade, and what to ask any answering service.</p>
       <div class="grid">
         {trades.map((e) => {
           const s = summary(e.data.trade!);
@@ -145,7 +50,8 @@ const jsonLd = [
             <a class="card" href={e.data.slug}>
               <span class="tag">{tradeNaics[e.data.trade!].short}</span>
               <h3>{e.data.title}</h3>
-              <span class="meta">{s.total.toLocaleString('en-US')} Kentucky establishments · {s.countiesReported} counties</span>
+              <p>{e.data.description}</p>
+              <span class="meta">{s.total.toLocaleString('en-US')} establishments · {s.countiesReported} counties</span>
             </a>
           );
         })}
@@ -153,76 +59,37 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="block" id="pricing">
+  <section class="block" style="padding-top:0">
     <div class="container">
-      <h2>Simple pricing. Test it before you pay.</h2>
-      <div class="price-card">
-        <div>
-          <p class="price-kicker">30-day free trial</p>
-          <p class="price">$0 <span>for 30 days</span></p>
-          <p class="price-then">Then plans start at <b>$297 a month</b>. No setup fee. Cancel anytime.</p>
-          <a class="btn lg" href={trial('pricing')} rel="noopener">Start your free trial</a>
-        </div>
-        <ul class="ticks">
-          <li>No credit card to start</li>
-          <li>Keep your current phone number</li>
-          <li>24/7 call answering before voicemail</li>
-          <li>Appointment booking and live transfers</li>
-          <li>ServiceTitan and AccuLynx connections</li>
-          <li>Estimate and lead follow-up</li>
-          <li>Multiple languages</li>
-          <li>Human help with setup</li>
-        </ul>
+      <h2>Start with the fundamentals</h2>
+      <div class="grid">
+        {hub && (
+          <a class="card" href={hub.data.slug}>
+            <span class="tag">Research</span>
+            <h3>{hub.data.title}</h3>
+            <p>{hub.data.description}</p>
+          </a>
+        )}
+        {rules && (
+          <a class="card" href={rules.data.slug}>
+            <span class="tag">Kentucky</span>
+            <h3>{rules.data.title}</h3>
+            <p>{rules.data.description}</p>
+          </a>
+        )}
       </div>
     </div>
   </section>
 
-  <section class="block alt" id="why">
+  <section class="block" style="padding-top:0">
     <div class="container">
-      <h2>Why home service businesses choose NOVA</h2>
-      <div class="why">
-        <div><strong>30 days free, no card.</strong><span>Longer than the 7-day and 14-day trials listed for Rosie and Goodcall on vendor and comparison pages. Compare the details yourself.</span></div>
-        <div><strong>One service does more of the job.</strong><span>Answers, books, follows up on estimates and transfers live calls, in tools like ServiceTitan and AccuLynx.</span></div>
-        <div><strong>Your rules, your number.</strong><span>You write the emergency rules and choose who gets the live transfer.</span></div>
-        <div><strong>Set up with a person.</strong><span>A human setup assistant helps you go live in one short call.</span></div>
-      </div>
-      <p><a href="/compare">See the full comparison with sources and dates</a></p>
-    </div>
-  </section>
-
-  <section class="block" id="faq">
-    <div class="container">
-      <h2>Questions</h2>
-      <div class="faq">
-        {faqs.map((f) => (
-          <details>
-            <summary>{f.q}</summary>
-            <p>{f.a}</p>
-          </details>
-        ))}
+      <h2>How we handle numbers</h2>
+      <div class="principles">
+        <div><strong>Every number has a source</strong><span>Each guide lists where its figures come from and when we pulled them.</span></div>
+        <div><strong>Vendor studies are labeled</strong><span>Most missed-call research is published by companies that sell phone tools. We show it as a range and say so.</span></div>
+        <div><strong>No invented customer stories</strong><span>We do not publish testimonials or revenue promises. If we cannot source it, we leave it out.</span></div>
+        <div><strong>We say who we are</strong><span>Nova Impact Solutions sells NOVA, an AI receptionist. Every guide opens with that disclosure.</span></div>
       </div>
     </div>
   </section>
-
-  <div class="container">
-    <CtaBand where="home-end" heading="Your next after-hours call could be a booked job" />
-  </div>
-
-  <script is:inline>
-    (function () {
-      var ids = ['c-missed', 'c-new', 'c-book', 'c-job'];
-      var out = document.getElementById('calc-out');
-      var form = document.getElementById('calc');
-      function num(id) { var v = parseFloat(String(document.getElementById(id).value).replace(/[^0-9.]/g, '')); return isNaN(v) ? null : v; }
-      function update() {
-        var m = num('c-missed'), n = num('c-new'), b = num('c-book'), j = num('c-job');
-        if (m === null || n === null || b === null || j === null) { out.textContent = 'Enter your numbers to see the revenue at stake each month.'; return; }
-        var jobs = m * (n / 100) * (b / 100);
-        var rev = jobs * j;
-        out.innerHTML = 'About <strong>' + (Math.round(jobs * 10) / 10) + '</strong> jobs and <strong>$' + Math.round(rev).toLocaleString('en-US') + '</strong> in revenue per month before any callers who would have called back. Your numbers, not a promise.';
-      }
-      ids.forEach(function (id) { document.getElementById(id).addEventListener('input', update); });
-      form.addEventListener('submit', function (e) { e.preventDefault(); });
-    })();
-  </script>
 </Base>

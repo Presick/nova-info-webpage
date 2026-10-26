@@ -5,7 +5,7 @@ slug: /kentucky/electrical/missed-calls
 trade: electrical
 state: KY
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-26
+last_updated: 2026-10-24
 data_pulled: 2026-10-24
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 authorities: [{name: "US Census Bureau, County Business Patterns 2023", url: "https://www.census.gov/programs-surveys/cbp/data/api.html"}, {name: "Kentucky Dept. of Housing, Buildings and Construction", url: "https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf"}]
@@ -45,19 +45,6 @@ Eight counties have 20 or more electrical establishments, 39 have between 5 and 
 
 Ask any answering service or AI receptionist what it says to a caller who mentions sparks or a burning smell, and whether that script is yours to edit. Kentucky requires [a state license](https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf) for electrical work, so the person on the phone must not promise a licensed electrician or give electrical advice beyond safety instructions you approve. Recording and AI-voice rules are covered in [Kentucky rules for businesses that let someone else answer the phone](/kentucky/call-rules).
 
-## How NOVA handles electrical calls
-
-NOVA is a 24/7 AI receptionist built for home service businesses. For electrical:
-
-- **Answers 24/7, before voicemail.** Quote requests and urgent calls both get picked up.
-- **Runs your safety script.** You write what NOVA says to a caller who mentions sparks, smoke or a burning smell, for example to leave the area and call 911, and which calls transfer live to you.
-- **Books the quote visits.** Panel upgrades, EV chargers and lighting jobs go on your calendar with the address and job type.
-- **Connects with tools like ServiceTitan**, so leads and bookings reach your team without re-typing.
-- **Follows up on open estimates**, so a quote that was not booked gets a second chance.
-- **Speaks multiple languages** for customers who prefer another language.
-
-**30-day free trial. No credit card. Keep your current number. Plans start at $297 a month after the trial, with no setup fee.** [Start your free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=electrical-mid)
-
 ## Sources
 
 - US Census Bureau, County Business Patterns 2023, NAICS 238210 (electrical contractors and other wiring installation contractors), Kentucky counties, pulled 2026-10-24: https://api.census.gov/data/2023/cbp
@@ -66,4 +53,6 @@ NOVA is a 24/7 AI receptionist built for home service businesses. For electrical
 
 ## About NOVA
 
-NOVA is the 24/7 AI receptionist from Nova Impact Solutions, which publishes this site. Learn how it works and how it compares on the [home page](/) and the [comparison page](/compare).
+NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
+
+[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=electrical)

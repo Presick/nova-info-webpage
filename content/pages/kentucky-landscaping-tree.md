@@ -5,7 +5,7 @@ slug: /kentucky/landscaping-tree/missed-calls
 trade: landscaping-tree
 state: KY
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-26
+last_updated: 2026-10-24
 data_pulled: 2026-10-24
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 authorities: [{name: "U", url: "S"}, {name: "h", url: "t"}]
@@ -45,19 +45,6 @@ Fourteen counties have 20 or more establishments, 29 have between 5 and 19, and 
 
 Ask any answering service or AI receptionist what it says to a caller with a downed line or a tree on a house, and whether you can change that script. Recording and AI-voice rules are covered in [Kentucky rules for businesses that let someone else answer the phone](/kentucky/call-rules).
 
-## How NOVA handles landscaping and tree service calls
-
-NOVA is a 24/7 AI receptionist built for home service businesses. For landscaping and tree service:
-
-- **Answers 24/7, before voicemail**, including while your crew runs loud equipment and cannot hear the phone.
-- **Handles estimate and bid calls.** NOVA captures the address, property size and service wanted, and books the site visit.
-- **Transfers storm and hazard calls live** to the crew lead or owner number you define, using the safety rules you write.
-- **Follows up on open bids and estimates**, so seasonal and commercial inquiries are not left hanging.
-- **Connects with tools like ServiceTitan and AccuLynx.** If you use another system, ask us during signup.
-- **Speaks multiple languages**, so more property owners and managers reach you.
-
-**30-day free trial. No credit card. Keep your current number. Plans start at $297 a month after the trial, with no setup fee.** [Start your free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=landscaping-tree-mid)
-
 ## Sources
 
 - US Census Bureau, County Business Patterns 2023, NAICS 561730 (landscaping services), Kentucky counties, pulled 2026-10-24: https://api.census.gov/data/2023/cbp
@@ -66,4 +53,6 @@ NOVA is a 24/7 AI receptionist built for home service businesses. For landscapin
 
 ## About NOVA
 
-NOVA is the 24/7 AI receptionist from Nova Impact Solutions, which publishes this site. Learn how it works and how it compares on the [home page](/) and the [comparison page](/compare).
+NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
+
+[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=landscaping-tree)

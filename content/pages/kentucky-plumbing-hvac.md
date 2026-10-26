@@ -5,7 +5,7 @@ slug: /kentucky/plumbing-hvac/missed-calls
 trade: plumbing-hvac
 state: KY
 status: approved for build (founder, 2026-10-24)
-last_updated: 2026-10-26
+last_updated: 2026-10-24
 data_pulled: 2026-10-24
 owner_disclosure: "Published by Nova Impact Solutions, which sells the NOVA AI receptionist."
 authorities: [{name: "US Census Bureau, County Business Patterns 2023", url: "https://www.census.gov/programs-surveys/cbp/data/api.html"}, {name: "Kentucky Dept. of Housing, Buildings and Construction", url: "https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf"}]
@@ -45,19 +45,6 @@ Sixteen counties have 20 or more of these establishments, 45 have between 5 and 
 
 Ask any answering service or AI receptionist exactly what it says to a caller with an active leak or a gas smell, and who it contacts. Kentucky requires [a state license](https://dhbc.ky.gov/Documents/KHBC_Plan%20Submission%20Application%20Guide%2025-0418.pdf) for plumbing and for heating and air-conditioning work, so the person on the phone must not promise a licensed technician unless you have told them to. Recording and AI-voice rules are covered in [Kentucky rules for businesses that let someone else answer the phone](/kentucky/call-rules).
 
-## How NOVA handles plumbing and HVAC calls
-
-NOVA is a 24/7 AI receptionist built for home service businesses. For plumbing and HVAC:
-
-- **Answers 24/7, before voicemail.** A burst pipe or a dead furnace at 9 PM gets picked up while you are at dinner or on another job.
-- **Follows your emergency rules.** You decide what counts as urgent. NOVA transfers those calls live to the phone number you choose.
-- **Books the routine calls.** Maintenance visits and estimates go on your calendar with the address and the problem captured.
-- **Connects with tools like ServiceTitan**, so bookings land where your dispatchers already work.
-- **Follows up on estimates** that were not booked, so quotes do not go cold.
-- **Speaks multiple languages**, so more callers reach a person who understands them.
-
-**30-day free trial. No credit card. Keep your current number. Plans start at $297 a month after the trial, with no setup fee.** [Start your free trial](https://30-day.novaimpactsolutions.com/?utm_source=nova-site&utm_medium=guide-body&utm_content=plumbing-hvac-mid)
-
 ## Sources
 
 - US Census Bureau, County Business Patterns 2023, NAICS 238220 (plumbing, heating, and air-conditioning contractors), Kentucky counties, pulled 2026-10-24: https://api.census.gov/data/2023/cbp
@@ -66,4 +53,6 @@ NOVA is a 24/7 AI receptionist built for home service businesses. For plumbing a
 
 ## About NOVA
 
-NOVA is the 24/7 AI receptionist from Nova Impact Solutions, which publishes this site. Learn how it works and how it compares on the [home page](/) and the [comparison page](/compare).
+NOVA is the 24/7 AI receptionist sold by Nova Impact Solutions, which publishes this site. It has a 30-day free trial with no credit card and works with your existing number for inbound calls; plans start at $297 per month after the trial.
+
+[See the NOVA trial](https://30-day.novaimpactsolutions.com/?utm_source=missed-call-guides&utm_medium=guide&utm_content=plumbing-hvac)
