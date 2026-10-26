@@ -62,9 +62,17 @@ a:hover { text-decoration-thickness: 2px; }
 .nav a:hover, .nav a[aria-current='page'] { border-bottom-color: var(--accent); }
 .nav a.btn { color: var(--accent); background: transparent; border: 1px solid var(--accent); padding: 0.45rem 0.9rem; white-space: nowrap; }
 .nav a.btn:hover { background: var(--accent-soft); filter: none; }
+.menu-toggle { display: none; align-items: center; gap: 0.5rem; padding: 0.5rem 0.9rem; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--text); font: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+.menu-toggle:hover { border-color: var(--accent); }
+
+/* Without JavaScript the nav simply wraps under the brand. With JavaScript, below 1100px it becomes a Menu button and a dropdown panel. */
 @media (max-width: 1100px) {
-  .nav { flex-wrap: nowrap; overflow-x: auto; width: 100%; gap: 1rem; padding-bottom: 0.25rem; white-space: nowrap; scrollbar-width: thin; }
-  .nav a.btn { flex: none; }
+  .site-header .bar { position: relative; }
+  .js .menu-toggle { display: inline-flex; }
+  .js .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 0; padding: 0.25rem 16px 1rem; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); max-height: calc(100vh - 70px); overflow-y: auto; }
+  .js .site-header[data-open] .nav { display: flex; }
+  .js .nav a { padding: 0.85rem 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
+  .js .nav a.btn { margin-top: 0.75rem; text-align: center; justify-content: center; border-bottom: 1px solid var(--accent); }
 }
 
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.7rem 1.15rem; border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none; border: 1px solid transparent; font-size: 0.95rem; line-height: 1.2; }
@@ -101,7 +109,7 @@ a.card:hover { transform: translateY(-2px); border-color: var(--accent); }
 .principles span { color: var(--muted); font-size: 0.95rem; }
 
 /* Article */
-.article-wrap { padding: 2rem 0 3rem; }
+.article-wrap { padding-block: 2rem 3rem; }
 .crumbs { font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; }
 .crumbs a { color: var(--muted); }
 .article-head .byline { font-size: 0.875rem; color: var(--muted); margin: 0 0 0.6rem; }
@@ -123,16 +131,20 @@ a.card:hover { transform: translateY(-2px); border-color: var(--accent); }
 .stat span { color: var(--muted); font-size: 0.85rem; }
 .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; box-shadow: var(--shadow); }
 
-.prose { max-width: var(--prose); }
+.prose { max-width: var(--prose); min-width: 0; overflow-wrap: anywhere; }
 .prose h2 { font-size: 1.45rem; letter-spacing: -0.01em; margin: 2.25rem 0 0.75rem; line-height: 1.25; }
 .prose h3 { font-size: 1.15rem; margin: 1.75rem 0 0.5rem; }
 .prose p, .prose li { font-size: 1.02rem; }
 .prose ul, .prose ol { padding-left: 1.25rem; }
 .prose li { margin: 0.35rem 0; }
 .prose table { display: table; border-collapse: separate; border-spacing: 0; width: 100%; margin: 1.25rem 0; font-size: 0.95rem; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-@media (max-width: 640px) { .prose table { display: block; overflow-x: auto; } }
+@media (max-width: 640px) {
+  .prose th { white-space: normal; }
+  .prose th, .prose td { padding: 0.5rem 0.55rem; font-size: 0.875rem; }
+}
 .prose th, .prose td { text-align: left; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-.prose th { background: var(--accent-soft); font-weight: 700; white-space: nowrap; }
+.prose th { background: var(--accent-soft); font-weight: 700; }
+@media (min-width: 641px) { .prose th { white-space: nowrap; } }
 .prose tr:last-child td { border-bottom: 0; }
 .prose td:nth-child(n+2) { font-variant-numeric: tabular-nums; }
 .prose > p:first-child em { display: block; padding: 0.75rem 1rem; background: var(--accent-soft); border-radius: 10px; font-style: normal; font-size: 0.95rem; color: var(--text); }
